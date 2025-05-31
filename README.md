@@ -7,6 +7,9 @@
   <img src="https://img.shields.io/badge/DI-Enabled-yellow" />
 </div>
 
+<div>
+  <img src="https://github.com/StarredNaga/Architecture-training-Library-Application-/blob/master/AppImage.bmp" />
+</div>
 ---
 
 ## 🧾 Описание (Русский)
