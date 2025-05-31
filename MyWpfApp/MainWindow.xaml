@@ -1,0 +1,331 @@
+﻿<Window
+    Background="#FF1A1A1A"
+    Height="600"
+    Loaded="Window_Loaded"
+    Title="Book Manager"
+    Width="900"
+    WindowStartupLocation="CenterScreen"
+    x:Class="MyWpfApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Window.Resources>
+        <!--  Стили для всего приложения  -->
+
+        <Style TargetType="Border" x:Key="ActionGroupStyle">
+            <Setter Property="Background" Value="#FF2D2D30" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+        </Style>
+
+        <!--  Стиль для заголовка группы  -->
+        <Style TargetType="TextBlock" x:Key="GroupHeaderStyle">
+            <Setter Property="Foreground" Value="#FF00B7EB" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,0,5" />
+        </Style>
+
+        <Style TargetType="ListViewItem" x:Key="SelectedBookStyle">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="BorderBrush" Value="#FF00B7EB" />
+                    <Setter Property="BorderThickness" Value="2" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!--  Улучшенный стиль для группы  -->
+        <Style TargetType="StackPanel" x:Key="ActionGroup">
+            <Setter Property="Background" Value="#FF2D2D30" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+        </Style>
+
+        <!--  Улучшенный стиль для заголовков групп  -->
+        <Style TargetType="TextBlock" x:Key="GroupHeader">
+            <Setter Property="Foreground" Value="#FF00B7EB" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,0,5" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Padding" Value="10,5" />
+        </Style>
+
+        <Style
+            BasedOn="{StaticResource {x:Type Button}}"
+            TargetType="Button"
+            x:Key="NavButton">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="#FF00B7EB" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF00B7EB" />
+                    <Setter Property="Foreground" Value="Black" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.5" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style
+            BasedOn="{StaticResource {x:Type Button}}"
+            TargetType="Button"
+            x:Key="ActionButton">
+            <Setter Property="Background" Value="#FF00B7EB" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="MinWidth" Value="100" />
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#FF2D2D30" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="#FF3C3C3C" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="CaretBrush" Value="#FF00B7EB" />
+            <Setter Property="Margin" Value="0,5,0,0" />
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Margin" Value="0,15,0,5" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Левая панель навигации  -->
+        <Border
+            Background="#FF252526"
+            BorderBrush="#FF3C3C3C"
+            BorderThickness="0,0,1,0"
+            Grid.Column="0">
+            <StackPanel Margin="10">
+                <TextBlock
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Foreground="#FF00B7EB"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,20"
+                    Text="BOOK MANAGER" />
+
+                <Button
+                    Click="ShowAddBookView"
+                    Content="Добавить книгу"
+                    Style="{StaticResource NavButton}"
+                    x:Name="BtnAddBook" />
+                <Button
+                    Click="ShowBooksListView"
+                    Content="Просмотр книг"
+                    Style="{StaticResource NavButton}"
+                    x:Name="BtnViewBooks" />
+
+                <!--  Группа действий с выбранной книгой  -->
+                <Border Style="{StaticResource ActionGroupStyle}">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource GroupHeaderStyle}" Text="Выбранная книга" />
+
+                        <Button
+                            Click="ShowEditBookView"
+                            Content="Редактировать"
+                            IsEnabled="False"
+                            Margin="0,5"
+                            Style="{StaticResource NavButton}"
+                            x:Name="BtnEditBook" />
+
+                        <Button
+                            Click="DeleteSelectedBook"
+                            Content="Удалить"
+                            IsEnabled="False"
+                            Margin="0,5"
+                            Style="{StaticResource NavButton}"
+                            x:Name="BtnDeleteBook" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <!--  Правая область контента  -->
+        <Grid
+            Grid.Column="1"
+            Margin="10"
+            x:Name="ContentArea">
+
+            <!--  Панель списка книг (по умолчанию видима)  -->
+            <Grid Visibility="Visible" x:Name="BooksListPanel">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    FontSize="18"
+                    Foreground="#FF00B7EB"
+                    Margin="10"
+                    Text="Список книг" />
+
+                <ListView
+                    Background="Transparent"
+                    Grid.Row="1"
+                    ItemContainerStyle="{StaticResource SelectedBookStyle}"
+                    Margin="10"
+                    SelectionChanged="BooksListView_SelectionChanged"
+                    x:Name="BooksListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Background="#FF2D2D30"
+                                CornerRadius="5"
+                                Margin="0,5"
+                                Padding="10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image
+                                        Height="120"
+                                        Margin="0,0,15,0"
+                                        Source="{Binding ImageUrl}"
+                                        Stretch="UniformToFill"
+                                        Width="80" />
+
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock
+                                            FontSize="16"
+                                            FontWeight="Bold"
+                                            Foreground="White"
+                                            Text="{Binding Title}" />
+
+                                        <TextBlock
+                                            Foreground="#FF00B7EB"
+                                            Margin="0,5,0,0"
+                                            Text="{Binding Author}" />
+
+                                        <TextBlock
+                                            Foreground="#FFA0A0A0"
+                                            Margin="0,5,0,0"
+                                            MaxWidth="500"
+                                            Text="{Binding Description}"
+                                            TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <!--  Панель добавления книги  -->
+            <Grid Visibility="Collapsed" x:Name="AddBookPanel">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="20" Width="400">
+                        <TextBlock
+                            FontSize="18"
+                            Foreground="#FF00B7EB"
+                            Margin="0,0,0,20"
+                            Text="Добавление новой книги" />
+
+                        <TextBlock Text="Название" />
+                        <TextBox x:Name="TxtTitle" />
+
+                        <TextBlock Text="URL изображения" />
+                        <TextBox x:Name="TxtImageUrl" />
+
+                        <TextBlock Text="Автор" />
+                        <TextBox x:Name="TxtAuthor" />
+
+                        <TextBlock Text="Описание" />
+                        <TextBox
+                            AcceptsReturn="True"
+                            Height="100"
+                            TextWrapping="Wrap"
+                            x:Name="TxtDescription" />
+
+                        <StackPanel
+                            HorizontalAlignment="Right"
+                            Margin="0,20,0,0"
+                            Orientation="Horizontal">
+                            <Button
+                                Background="Transparent"
+                                BorderBrush="#FF00B7EB"
+                                Click="CancelOperation"
+                                Content="Отмена"
+                                Foreground="#FF00B7EB"
+                                Margin="0,0,10,0" />
+
+                            <Button
+                                Click="SaveBook"
+                                Content="Сохранить"
+                                Style="{StaticResource ActionButton}" />
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <!--  Панель редактирования книги  -->
+            <Grid Visibility="Collapsed" x:Name="EditBookPanel">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="20" Width="400">
+                        <TextBlock
+                            FontSize="18"
+                            Foreground="#FF00B7EB"
+                            Margin="0,0,0,20"
+                            Text="Редактирование книги" />
+
+                        <TextBlock Text="Название" />
+                        <TextBox x:Name="TxtEditTitle" />
+
+                        <TextBlock Text="URL изображения" />
+                        <TextBox x:Name="TxtEditImageUrl" />
+
+                        <TextBlock Text="Автор" />
+                        <TextBox x:Name="TxtEditAuthor" />
+
+                        <TextBlock Text="Описание" />
+                        <TextBox
+                            AcceptsReturn="True"
+                            Height="100"
+                            TextWrapping="Wrap"
+                            x:Name="TxtEditDescription" />
+
+                        <StackPanel
+                            HorizontalAlignment="Right"
+                            Margin="0,20,0,0"
+                            Orientation="Horizontal">
+                            <Button
+                                Background="Transparent"
+                                BorderBrush="#FF00B7EB"
+                                Click="CancelOperation"
+                                Content="Отмена"
+                                Foreground="#FF00B7EB"
+                                Margin="0,0,10,0" />
+
+                            <Button
+                                Click="UpdateBook"
+                                Content="Обновить"
+                                Style="{StaticResource ActionButton}" />
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,65 @@
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.exe
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.deps.json
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.runtimeconfig.json
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.dll
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.pdb
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\App.g.cs
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp_MarkupCompile.cache
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp_MarkupCompile.lref
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MainWindow.baml
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.g.resources
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.AssemblyInfoInputs.cache
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.AssemblyInfo.cs
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.csproj.CoreCompileInputs.cache
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.dll
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\refint\MyWpfApp.dll
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.pdb
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.genruntimeconfig.cache
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\ref\MyWpfApp.dll
+C:\Users\StarredNaga\Desktop\Rider Projects\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.exe
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.deps.json
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.runtimeconfig.json
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\MyWpfApp.pdb
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\App.g.cs
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp_MarkupCompile.cache
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MainWindow.baml
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.g.resources
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.AssemblyInfoInputs.cache
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.AssemblyInfo.cs
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.csproj.CoreCompileInputs.cache
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\refint\MyWpfApp.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.pdb
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.genruntimeconfig.cache
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\ref\MyWpfApp.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Newtonsoft.Json.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Npgsql.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Configurations.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\DataAccess.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\DataBase.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Domain.dll
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Configurations.pdb
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\DataAccess.pdb
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\DataBase.pdb
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Domain.pdb
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.csproj.AssemblyReference.cache
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.csproj.Up2Date
