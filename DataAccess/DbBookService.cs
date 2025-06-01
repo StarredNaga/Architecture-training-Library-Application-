@@ -7,7 +7,7 @@ namespace DataAccess;
 
 public class DbBookService : IBookService
 {
-    private BookDbContext _dbContext;
+    private readonly BookDbContext _dbContext;
 
     public DbBookService(BookDbContext dbContext)
     {
@@ -16,21 +16,21 @@ public class DbBookService : IBookService
         _dbContext.Initialize();
     }
 
-    public Book AddBook(Book book)
+    public async Task<Book> AddBook(Book book)
     {
         _dbContext.Books.Add(book);
 
-        _dbContext.SaveChanges();
+        await _dbContext.SaveChangesAsync();
 
         return book;
     }
 
-    public List<Book> GetBooks()
+    public async Task<List<Book>> GetBooks()
     {
-        return _dbContext.Books.AsNoTracking().ToList();
+        return await _dbContext.Books.AsNoTracking().ToListAsync();
     }
 
-    public Book UpdateBook(Book book, int id)
+    public async Task<Book> UpdateBook(Book book, int id)
     {
         if (!_dbContext.Books.Any(b => b.Id == id))
             throw new Exception("Book not found");
@@ -42,12 +42,12 @@ public class DbBookService : IBookService
         updateBook.Description = book.Description;
         updateBook.ImageUrl = book.ImageUrl;
 
-        _dbContext.SaveChanges();
+        await _dbContext.SaveChangesAsync();
 
         return updateBook;
     }
 
-    public void DeleteBook(int id)
+    public async Task DeleteBook(int id)
     {
         if (!_dbContext.Books.Any(b => b.Id == id))
             throw new Exception("Book not found");
@@ -56,6 +56,6 @@ public class DbBookService : IBookService
 
         _dbContext.Books.Remove(book);
 
-        _dbContext.SaveChanges();
+        await _dbContext.SaveChangesAsync();
     }
 }

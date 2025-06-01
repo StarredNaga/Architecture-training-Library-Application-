@@ -19,3 +19,4 @@ C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\Configurations\obj\Debug\net9.
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\Configurations\obj\Debug\net9.0\ref\Configurations.dll
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\Configurations\bin\Debug\net9.0\Configurations.runtimeconfig.json
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\Configurations\obj\Debug\net9.0\Configurations.genruntimeconfig.cache
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\Configurations\obj\Debug\net9.0\Configurations.sourcelink.json

@@ -9,7 +9,7 @@ namespace MyWpfApp;
 
 public partial class MainWindow : Window
 {
-    private Library _library;
+    private readonly Library _library;
 
     private readonly ObservableCollection<BookDto?> _books = [];
     private BookDto? _selectedBook;
@@ -20,20 +20,20 @@ public partial class MainWindow : Window
 
         var configurations = new Configurations.Configurations();
 
-        var serviceProvider = configurations.UseFile();
+        var serviceProvider = configurations.UseDataBase();
 
         _library = new Library(serviceProvider.GetRequiredService<IBookService>());
     }
 
-    private void Window_Loaded(object sender, RoutedEventArgs e)
+    private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
         LoadBooks();
     }
 
-    private void LoadBooks()
+    private async void LoadBooks()
     {
         _books.Clear();
-        foreach (var book in _library.GetBooks(null))
+        foreach (var book in await _library.GetBooks(null))
         {
             _books.Add(book);
         }
@@ -81,7 +81,7 @@ public partial class MainWindow : Window
         ShowBooksListView(sender, e);
     }
 
-    private void SaveBook(object sender, RoutedEventArgs e)
+    private async void SaveBook(object sender, RoutedEventArgs e)
     {
         var newBook = new BookDto
         {
@@ -91,12 +91,14 @@ public partial class MainWindow : Window
             Description = TxtDescription.Text,
         };
 
-        var createdBook = _library.CreateBook(newBook);
+        var createdBook = await _library.CreateBook(newBook);
+
         _books.Add(createdBook);
+
         ShowBooksListView(sender, e);
     }
 
-    private void UpdateBook(object sender, RoutedEventArgs e)
+    private async void UpdateBook(object sender, RoutedEventArgs e)
     {
         if (_selectedBook == null)
             return;
@@ -111,10 +113,11 @@ public partial class MainWindow : Window
 
         try
         {
-            var result = _library.UpdateBook(_selectedBook, updatedBook);
+            var result = await _library.UpdateBook(_selectedBook, updatedBook);
 
             // Обновляем книгу в коллекции
             var index = _books.IndexOf(_selectedBook);
+
             if (index >= 0)
             {
                 _books[index] = result;
@@ -133,13 +136,16 @@ public partial class MainWindow : Window
         }
     }
 
-    private void DeleteSelectedBook(object sender, RoutedEventArgs e)
+    private async void DeleteSelectedBook(object sender, RoutedEventArgs e)
     {
         try
         {
-            _library.DeleteBook(_selectedBook);
+            await _library.DeleteBook(_selectedBook);
+
             _books.Remove(_selectedBook);
+
             _selectedBook = null;
+
             UpdateButtonStates();
         }
         catch (Exception ex)

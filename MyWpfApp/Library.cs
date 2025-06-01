@@ -7,18 +7,18 @@ namespace MyWpfApp;
 
 public class Library
 {
-    private IBookService _bookService;
+    private readonly IBookService _bookService;
 
     public Library(IBookService bookService)
     {
         _bookService = bookService;
     }
 
-    private List<Book> GetBooks() => _bookService.GetBooks();
+    private async Task<List<Book>> GetBooks() => await _bookService.GetBooks();
 
-    private int GetIdByDto(BookDto? bookDto)
+    private async Task<int> GetIdByDto(BookDto? bookDto)
     {
-        var books = GetBooks();
+        var books = await GetBooks();
 
         return books
                 .FirstOrDefault(x =>
@@ -30,9 +30,9 @@ public class Library
                 ?.Id ?? -1;
     }
 
-    public List<BookDto> GetBooks(IBookSorter? sort)
+    public async Task<List<BookDto>> GetBooks(IBookSorter? sort)
     {
-        var books = _bookService.GetBooks();
+        var books = await _bookService.GetBooks();
 
         return sort?.ApplySort(books)
             ?? books
@@ -46,18 +46,20 @@ public class Library
                 .ToList();
     }
 
-    public BookDto? GetBook(IBookSorter? sort)
+    public async Task<BookDto?> GetBook(IBookSorter? sort)
     {
-        return GetBooks(sort).FirstOrDefault();
+        var books = await GetBooks(sort);
+
+        return books.FirstOrDefault();
     }
 
-    public BookDto CreateBook(BookDto book)
+    public async Task<BookDto> CreateBook(BookDto book)
     {
-        var books = GetBooks();
+        var books = await GetBooks();
 
-        var lastId = books.Count > 0 ? GetBooks().Select(x => x.Id).Max() : 0;
+        var lastId = books.Count > 0 ? books.Select(x => x.Id).Max() : 0;
 
-        var result = _bookService.AddBook(
+        var result = await _bookService.AddBook(
             new Book
             {
                 Id = lastId + 1,
@@ -77,14 +79,14 @@ public class Library
         };
     }
 
-    public BookDto? UpdateBook(BookDto? book, BookDto updatedBook)
+    public async Task<BookDto?> UpdateBook(BookDto? book, BookDto updatedBook)
     {
-        var bookId = GetIdByDto(book);
+        var bookId = await GetIdByDto(book);
 
         if (bookId == -1)
             throw new Exception("Book not found");
 
-        var result = _bookService.UpdateBook(
+        var result = await _bookService.UpdateBook(
             new Book
             {
                 Author = updatedBook.Author,
@@ -104,13 +106,13 @@ public class Library
         };
     }
 
-    public void DeleteBook(BookDto? book)
+    public async Task DeleteBook(BookDto? book)
     {
-        var id = GetIdByDto(book);
+        var id = await GetIdByDto(book);
 
         if (id == -1)
             throw new Exception("Book not found");
 
-        _bookService.DeleteBook(id);
+        await _bookService.DeleteBook(id);
     }
 }

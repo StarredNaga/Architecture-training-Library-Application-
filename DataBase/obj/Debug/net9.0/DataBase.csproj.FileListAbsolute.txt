@@ -15,3 +15,4 @@ C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\DataBase\obj\Debug\net9.0\Data
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\DataBase\obj\Debug\net9.0\ref\DataBase.dll
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\DataBase\bin\Debug\net9.0\DataBase.runtimeconfig.json
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\DataBase\obj\Debug\net9.0\DataBase.genruntimeconfig.cache
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\DataBase\obj\Debug\net9.0\DataBase.sourcelink.json

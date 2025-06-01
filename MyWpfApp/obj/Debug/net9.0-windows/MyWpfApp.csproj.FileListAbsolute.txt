@@ -63,3 +63,4 @@ C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-wind
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\bin\Debug\net9.0-windows\Domain.pdb
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.csproj.AssemblyReference.cache
 C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.csproj.Up2Date
+C:\Users\StarredNaga\Desktop\Projects\C#\MyWpfApp\MyWpfApp\obj\Debug\net9.0-windows\MyWpfApp.sourcelink.json

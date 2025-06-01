@@ -29,23 +29,36 @@ public class FileBookService : IBookService
         }
     }
 
-    public Book AddBook(Book book)
+    public async Task<Book> AddBook(Book book)
     {
-        var books = _bookFormater.DeserializeList(_reader.ReadAllText());
+        var books = new List<Book>();
+
+        await Task.Run(() =>
+        {
+            books = _bookFormater.DeserializeList(_reader.ReadAllText());
+        });
 
         if (books == null)
             throw new Exception();
 
         books.Add(book);
 
-        _writer.Write(_bookFormater.SerializeList(books));
+        await Task.Run(() =>
+        {
+            _writer.Write(_bookFormater.SerializeList(books));
+        });
 
         return book;
     }
 
-    public List<Book> GetBooks()
+    public async Task<List<Book>> GetBooks()
     {
-        var books = _bookFormater.DeserializeList(_reader.ReadAllText());
+        var books = new List<Book>();
+
+        await Task.Run(() =>
+        {
+            books = _bookFormater.DeserializeList(_reader.ReadAllText());
+        });
 
         if (books == null)
             throw new Exception();
@@ -53,7 +66,7 @@ public class FileBookService : IBookService
         return books.ToList();
     }
 
-    public Book UpdateBook(Book book, int id)
+    public async Task<Book> UpdateBook(Book book, int id)
     {
         var books = _bookFormater.DeserializeList(_reader.ReadAllText());
 
@@ -73,12 +86,15 @@ public class FileBookService : IBookService
         updateBook.Description = book.Description;
         updateBook.ImageUrl = book.ImageUrl;
 
-        _writer.Write(_bookFormater.SerializeList(books));
+        await Task.Run(() =>
+        {
+            _writer.Write(_bookFormater.SerializeList(books));
+        });
 
         return updateBook;
     }
 
-    public void DeleteBook(int id)
+    public async Task DeleteBook(int id)
     {
         var books = _bookFormater.DeserializeList(_reader.ReadAllText());
 
@@ -99,6 +115,9 @@ public class FileBookService : IBookService
             return;
         }
 
-        _writer.Write(_bookFormater.SerializeList(books));
+        await Task.Run(() =>
+        {
+            _writer.Write(_bookFormater.SerializeList(books));
+        });
     }
 }
