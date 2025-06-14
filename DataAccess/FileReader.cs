@@ -1,9 +1,11 @@
 ﻿using DataAccess.Interfaces;
 using DataBase;
-using DataBase.Interfaces;
 
 namespace DataAccess;
 
+/// <summary>
+///  Class for read data from file
+/// </summary>
 public class FileReader : IFileReader
 {
     private readonly FileConfigs _config;
@@ -16,6 +18,10 @@ public class FileReader : IFileReader
             File.Create(_config.Path + _config.Name).Close();
     }
 
+    /// <summary>
+    ///  Read text from file
+    /// </summary>
+    /// <returns>File data as string</returns>
     public string ReadAllText()
     {
         using var fs = new FileStream(_config.Path + _config.Name, FileMode.Open);
@@ -25,6 +31,10 @@ public class FileReader : IFileReader
         return sr.ReadToEnd();
     }
 
+    /// <summary>
+    ///  Read text from file async
+    /// </summary>
+    /// <returns>File data as string</returns>
     public async Task<string> ReadAllTextAsync()
     {
         using var fs = new FileStream(_config.Path + _config.Name, FileMode.Open);

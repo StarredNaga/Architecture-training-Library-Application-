@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace DataBase.Interfaces;
+namespace DataAccess.Interfaces;
 
 public interface IBookFormater
 {

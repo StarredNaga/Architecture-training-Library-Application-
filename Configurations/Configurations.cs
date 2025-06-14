@@ -1,12 +1,14 @@
 ﻿using DataAccess;
 using DataAccess.Interfaces;
 using DataBase;
-using DataBase.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Configurations;
 
+/// <summary>
+/// Class for implement configurations
+/// </summary>
 public class Configurations
 {
     private IServiceCollection _services;
@@ -23,16 +25,14 @@ public class Configurations
 
     public IServiceProvider Provider => _provider;
 
+    /// <summary>
+    ///  Include Entity framework core and storage books in postreSQL database
+    /// </summary>
+    /// <returns></returns>
     public IServiceProvider UseDataBase()
     {
         _services
-            .AddSingleton(
-                new DbConfigs
-                {
-                    ConnectionString =
-                        "User ID=postgres;Password=57912021ASK;Host=localhost;Port=5432;Database=TrainingDb;",
-                }
-            )
+            .AddSingleton(new DbConfigs { ConnectionString = "db configs here" })
             .AddDbContext<BookDbContext>(
                 (serviceProvider, options) =>
                 {
@@ -47,6 +47,10 @@ public class Configurations
         return _provider;
     }
 
+    /// <summary>
+    ///  Include storage in file
+    /// </summary>
+    /// <returns></returns>
     public IServiceProvider UseFile()
     {
         _services
@@ -63,6 +67,10 @@ public class Configurations
         return _provider;
     }
 
+    /// <summary>
+    ///  Builds ServiceProvider
+    /// </summary>
+    /// <returns></returns>
     public IServiceProvider ConfigureServices()
     {
         _provider = _services.BuildServiceProvider();

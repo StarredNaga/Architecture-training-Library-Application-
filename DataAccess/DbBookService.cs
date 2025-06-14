@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess;
 
+/// <summary>
+///  Class for storage books in database
+/// </summary>
 public class DbBookService : IBookService
 {
     private readonly BookDbContext _dbContext;
@@ -16,6 +19,11 @@ public class DbBookService : IBookService
         _dbContext.Initialize();
     }
 
+    /// <summary>
+    ///  Add book to database
+    /// </summary>
+    /// <param name="book"></param>
+    /// <returns>Added book</returns>
     public async Task<Book> AddBook(Book book)
     {
         _dbContext.Books.Add(book);
@@ -25,11 +33,22 @@ public class DbBookService : IBookService
         return book;
     }
 
+    /// <summary>
+    ///  Get list of books
+    /// </summary>
+    /// <returns>List of books</returns>
     public async Task<List<Book>> GetBooks()
     {
         return await _dbContext.Books.AsNoTracking().ToListAsync();
     }
 
+    /// <summary>
+    ///  Update book
+    /// </summary>
+    /// <param name="book">New data for book</param>
+    /// <param name="id">Id of book that need to update</param>
+    /// <returns>Updated book</returns>
+    /// <exception cref="Exception">If database doesn't contains book with that id</exception>
     public async Task<Book> UpdateBook(Book book, int id)
     {
         if (!_dbContext.Books.Any(b => b.Id == id))
@@ -47,6 +66,11 @@ public class DbBookService : IBookService
         return updateBook;
     }
 
+    /// <summary>
+    ///  Delete book
+    /// </summary>
+    /// <param name="id">Id of book that u want delete</param>
+    /// <exception cref="Exception">If database doesn't contains book with that id</exception>
     public async Task DeleteBook(int id)
     {
         if (!_dbContext.Books.Any(b => b.Id == id))

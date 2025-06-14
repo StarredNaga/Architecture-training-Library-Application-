@@ -1,5 +1,8 @@
 ﻿namespace Domain.Entities;
 
+/// <summary>
+///  Book
+/// </summary>
 public class Book
 {
     public int Id { get; init; }

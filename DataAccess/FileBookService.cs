@@ -1,9 +1,11 @@
 ﻿using DataAccess.Interfaces;
-using DataBase.Interfaces;
 using Domain.Entities;
 
 namespace DataAccess;
 
+/// <summary>
+/// Class for storage books in file
+/// </summary>
 public class FileBookService : IBookService
 {
     private readonly IFileReader _reader;
@@ -29,28 +31,33 @@ public class FileBookService : IBookService
         }
     }
 
+    /// <summary>
+    ///  Add book to file
+    /// </summary>
+    /// <param name="book">Book to add</param>
+    /// <returns>Added book</returns>
+    /// <exception cref="Exception">Deserialize error</exception>
     public async Task<Book> AddBook(Book book)
     {
         var books = new List<Book>();
 
-        await Task.Run(() =>
-        {
-            books = _bookFormater.DeserializeList(_reader.ReadAllText());
-        });
+        books = _bookFormater.DeserializeList(await _reader.ReadAllTextAsync());
 
         if (books == null)
             throw new Exception();
 
         books.Add(book);
 
-        await Task.Run(() =>
-        {
-            _writer.Write(_bookFormater.SerializeList(books));
-        });
+        await _writer.WriteAsync(_bookFormater.SerializeList(books));
 
         return book;
     }
 
+    /// <summary>
+    ///  Get all books
+    /// </summary>
+    /// <returns>List of books</returns>
+    /// <exception cref="Exception">Deserialize error</exception>
     public async Task<List<Book>> GetBooks()
     {
         var books = new List<Book>();
@@ -63,9 +70,19 @@ public class FileBookService : IBookService
         return books.ToList();
     }
 
+    /// <summary>
+    /// Update book
+    /// </summary>
+    /// <param name="book">New data of book</param>
+    /// <param name="id">Id of book that must be updated</param>
+    /// <returns>Book with new data</returns>
+    /// <exception cref="Exception">
+    /// 1. File doesn't contains book with that id
+    /// 2. Deserialize error
+    /// </exception>
     public async Task<Book> UpdateBook(Book book, int id)
     {
-        var books = _bookFormater.DeserializeList(_reader.ReadAllText());
+        var books = _bookFormater.DeserializeList(await _reader.ReadAllTextAsync());
 
         if (books == null)
             throw new Exception();
@@ -83,14 +100,19 @@ public class FileBookService : IBookService
         updateBook.Description = book.Description;
         updateBook.ImageUrl = book.ImageUrl;
 
-        await Task.Run(() =>
-        {
-            _writer.Write(_bookFormater.SerializeList(books));
-        });
+        await _writer.WriteAsync(_bookFormater.SerializeList(books));
 
         return updateBook;
     }
 
+    /// <summary>
+    ///  Delete book
+    /// </summary>
+    /// <param name="id">Id of book that must be deleted</param>
+    /// <exception cref="Exception">
+    /// 1. Deserialize error
+    /// 2. File doesn't contain book with that id
+    /// </exception>
     public async Task DeleteBook(int id)
     {
         var books = _bookFormater.DeserializeList(_reader.ReadAllText());
@@ -107,14 +129,11 @@ public class FileBookService : IBookService
 
         if (books.Count == 0)
         {
-            _writer.Write(_bookFormater.SerializeList([]));
+            await _writer.WriteAsync(_bookFormater.SerializeList([]));
 
             return;
         }
 
-        await Task.Run(() =>
-        {
-            _writer.Write(_bookFormater.SerializeList(books));
-        });
+        await _writer.WriteAsync(_bookFormater.SerializeList(books));
     }
 }
