@@ -1,10 +1,12 @@
-﻿using DataBase.Interfaces;
+﻿using DataAccess.Interfaces;
+using DataBase;
+using DataBase.Interfaces;
 
-namespace DataBase;
+namespace DataAccess;
 
 public class FileReader : IFileReader
 {
-    private FileConfigs _config;
+    private readonly FileConfigs _config;
 
     public FileReader(FileConfigs config)
     {
@@ -21,5 +23,14 @@ public class FileReader : IFileReader
         using var sr = new StreamReader(fs);
 
         return sr.ReadToEnd();
+    }
+
+    public async Task<string> ReadAllTextAsync()
+    {
+        using var fs = new FileStream(_config.Path + _config.Name, FileMode.Open);
+
+        using var sr = new StreamReader(fs);
+
+        return await sr.ReadToEndAsync();
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l4DsAMj/f0E=",
+  "dgSpecHash": "mauIXJawNl8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\StarredNaga\\Desktop\\Projects\\C#\\MyWpfApp\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\StarredNaga\\Desktop\\Projects\\Programs\\C#\\LibraryProject\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\StarredNaga\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.5\\microsoft.entityframeworkcore.9.0.5.nupkg.sha512",
     "C:\\Users\\StarredNaga\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.5\\microsoft.entityframeworkcore.abstractions.9.0.5.nupkg.sha512",
@@ -19,7 +19,10 @@
     "C:\\Users\\StarredNaga\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.5\\microsoft.extensions.primitives.9.0.5.nupkg.sha512",
     "C:\\Users\\StarredNaga\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\StarredNaga\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
-    "C:\\Users\\StarredNaga\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512"
+    "C:\\Users\\StarredNaga\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
+    "C:\\Users\\StarredNaga\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.4\\microsoft.netcore.app.ref.9.0.4.nupkg.sha512",
+    "C:\\Users\\StarredNaga\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.4\\microsoft.windowsdesktop.app.ref.9.0.4.nupkg.sha512",
+    "C:\\Users\\StarredNaga\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.4\\microsoft.aspnetcore.app.ref.9.0.4.nupkg.sha512"
   ],
   "logs": []
 }

@@ -2,7 +2,7 @@
 
 public class FileConfigs
 {
-    public string Path { get; set; } = String.Empty;
+    public string Path { get; init; } = String.Empty;
 
-    public string Name { get; set; } = String.Empty;
+    public string Name { get; init; } = String.Empty;
 }

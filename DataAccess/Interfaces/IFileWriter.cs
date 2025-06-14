@@ -1,4 +1,4 @@
-﻿namespace DataBase.Interfaces;
+﻿namespace DataAccess.Interfaces;
 
 public interface IFileWriter
 {

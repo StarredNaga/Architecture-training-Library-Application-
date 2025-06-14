@@ -55,10 +55,7 @@ public class FileBookService : IBookService
     {
         var books = new List<Book>();
 
-        await Task.Run(() =>
-        {
-            books = _bookFormater.DeserializeList(_reader.ReadAllText());
-        });
+        books = _bookFormater.DeserializeList(await _reader.ReadAllTextAsync());
 
         if (books == null)
             throw new Exception();

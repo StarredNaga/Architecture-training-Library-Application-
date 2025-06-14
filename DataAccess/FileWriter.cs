@@ -1,10 +1,12 @@
-﻿using DataBase.Interfaces;
+﻿using DataAccess.Interfaces;
+using DataBase;
+using DataBase.Interfaces;
 
-namespace DataBase;
+namespace DataAccess;
 
 public class FileWriter : IFileWriter
 {
-    private FileConfigs _config;
+    private readonly FileConfigs _config;
 
     public FileWriter(FileConfigs config)
     {
