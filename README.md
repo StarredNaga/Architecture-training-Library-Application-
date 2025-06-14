@@ -29,3 +29,31 @@
 ### 🚀 Как запустить:
 ```bash
 git clone https://github.com/StarredNaga/Architecture-training-Library-Application-.git
+```
+
+## 🧾 Description (English)
+
+**Library Management Application** is a desktop WPF application for managing book collections, implemented using clean code architectural principles and Dependency Injection.
+
+### 💡 Features:
+- 📗 Add, edit, and delete books
+- 🔍 Search by author or title
+- 💾 Support for two storage types:
+  - **File system** (JSON serialization)
+  - **Database** (via Entity Framework Core)
+- 🧱 Clear layer separation:
+  - `Domain`, `DataAccess`, `UI (WPF)`
+- 🧪 Extensibility through interfaces (`IBookService`, `IFileReader`, `IBookFormatter`, ...)
+- 🔄 Dynamic storage switching via Dependency Injection
+
+### 🏗️ Architecture Highlights:
+- **MVVM pattern** with ViewModel layer
+- **Dependency Injection** (Microsoft.Extensions.DependencyInjection)
+- **Repository pattern** for data access
+- **Configuration-free EF Core** setup (code-first)
+- **Validation** for book entities
+
+### 🚀 How to Run:
+```bash
+git clone https://github.com/StarredNaga/Architecture-training-Library-Application-.git
+```
